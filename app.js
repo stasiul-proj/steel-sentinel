@@ -1,13 +1,13 @@
-import { initMap } from "./core/map"
-import { loadInfrastructure } from "./core/infrastructure"
-import { createEnemyDrone } from "./core/drones"
-import { initControls } from "./ui/controls"
+import { initMap } from "./core/map.js"
+import { loadInfrastructure } from "./core/infrastructure.js"
+import { createEnemyDrone } from "./core/drones.js"
+import { initControls } from "./ui/controls.js"
 import { createRadar }
-from "./core/radar"
+from "./core/radar.js"
 import {
   createInterceptorBase
 }
-from "./core/bases"
+from "./core/bases.js"
 
 // MAP
 
