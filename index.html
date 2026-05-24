@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>STEEL SENTINEL</title>
+
+  <!-- STYLES -->
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- LEAFLET -->
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+      <!-- HEADER -->
+
+      <div class="title">
+        STEEL SENTINEL
+      </div>
+
+      <div class="subtitle">
+        Autonomous Airspace Defense Platform
+      </div>
+
+      <!-- SCROLLABLE SETTINGS -->
+
+      <div class="left-scroll-content">
+
+        <!-- THREAT CONFIGURATION -->
+
+        <div class="panel">
+
+          <h2>Threat Configuration</h2>
+
+          <!-- NUMBER OF DRONES -->
+
+          <div class="input-group">
+
+            <label>Number of Drones</label>
+
+            <input
+              id="droneCount"
+              type="range"
+              min="1"
+              max="20"
+              value="3"
+            >
+
+            <div class="slider-value" id="droneCountValue">
+              3 UAVs
+            </div>
+
+          </div>
+
+          <!-- DRONE TYPE -->
+
+          <div class="input-group">
+
+            <label>Drone Type</label>
+
+            <select id="droneType">
+              <option>FPV Attack Drone</option>
+              <option>Recon UAV</option>
+              <option>Loitering Munition</option>
+              <option>Swarm UAV</option>
+            </select>
+
+          </div>
+
+          <!-- THREAT SPEED -->
+
+          <div class="input-group">
+
+            <label>Threat Speed</label>
+
+            <input
+              id="droneSpeed"
+              type="range"
+              min="50"
+              max="200"
+              value="120"
+            >
+
+            <div class="slider-value" id="droneSpeedValue">
+              180 km/h
+            </div>
+
+          </div>
+
+          <!-- THREAT ALTITUDE -->
+
+          <div class="input-group">
+
+            <label>Threat Altitude</label>
+
+            <input
+              id="droneAltitude"
+              type="range"
+              min="50"
+              max="1000"
+              value="120"
+            >
+
+            <div class="slider-value" id="droneAltitudeValue">
+              120 m
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- MISSION PARAMETERS -->
+
+        <div class="panel">
+
+          <h2>Mission Parameters</h2>
+
+          <!-- AI DEFENSE MODE -->
+
+          <div class="input-group">
+
+            <label>AI Defense Mode</label>
+
+            <select id="aiMode">
+              <option>Defensive</option>
+              <option>Aggressive</option>
+            </select>
+
+          </div>
+
+          <!-- WEATHER -->
+
+          <div class="input-group">
+
+            <label>Weather Conditions</label>
+
+            <select id="weatherMode">
+              <option>Clear</option>
+              <option>Rain</option>
+              <option>Fog</option>
+              <option>Storm</option>
+            </select>
+
+          </div>
+
+          <!-- RADAR -->
+
+          <div class="input-group">
+
+            <label>Radar Sensitivity</label>
+
+            <input
+              id="radarSensitivity"
+              type="range"
+              min="1"
+              max="10"
+              value="7"
+            >
+
+            <div class="slider-value" id="radarSensitivityValue">
+              7 / 10
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FIXED CONTROLS -->
+
+      <div class="panel controls-panel">
+
+        <h2>Simulation Controls</h2>
+
+        <button id="startSimulation" class="start-btn">
+          START SIMULATION
+        </button>
+
+        <button id="pauseSimulation" class="pause-btn">
+          PAUSE
+        </button>
+
+        <button id="resetSimulation" class="reset-btn">
+          RESET
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- CENTER PANEL -->
+
+    <div class="center-panel">
+
+      <div id="map"></div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+  <!-- AI ANALYSIS -->
+
+  <div class="logs-title">
+    AI THREAT ANALYSIS
+  </div>
+
+  <div id="logsContainer"></div>
+
+  <!-- INTERCEPTOR TELEMETRY -->
+
+  <div class="logs-title interceptor-title">
+    INTERCEPTOR TELEMETRY
+  </div>
+
+  <div id="interceptorContainer"></div>
+  <div class="logs-title base-title">
+  INTERCEPTOR BASES
+</div>
+
+<div id="basesContainer"></div>
+  <div class="logs-title timeline-title">
+  LIVE EVENT FEED
+</div>
+
+<div id="eventContainer"></div>
+
+</div>
+
+  </div>
+
+  <!-- LEAFLET -->
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- APP -->
+
+  <script type="module" src="app.js"></script>
+
+</body>
+
+</html>
